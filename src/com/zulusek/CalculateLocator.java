@@ -101,9 +101,11 @@ public class CalculateLocator {
         double fourthPairLatitude = thirdPairLatitudeReminder / 0.004166;
         int fourthPairLatitudeDigit = (int)fourthPairLatitude;
 
-        return firstPairLongitudeLetter + firstPairLatitudeLetter + secondPairLongitudeDigit + secondPairLatitudeDigit + thirdPairLongitudeLetter + thirdPairLatitudeLetter + fourthPairLongitudeDigit + fourthPairLatitudeDigit;
+        String str = firstPairLongitudeLetter + firstPairLatitudeLetter ;
+        Locale locale = Locale.getDefault();  //TODO: how it works? dive into it | https://javatutorialhq.com/java/lang/string-class-tutorial/touppercase-locale-method-example/
+        String upperCaseLetters = str.toUpperCase(locale);
+
+        return upperCaseLetters + secondPairLongitudeDigit + secondPairLatitudeDigit + thirdPairLongitudeLetter + thirdPairLatitudeLetter + fourthPairLongitudeDigit + fourthPairLatitudeDigit;
     }
-
-
 
 }
